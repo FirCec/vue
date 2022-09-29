@@ -1,20 +1,18 @@
 <template>
   <div class="about container">
-    <h1>About us</h1>
+    <h1>About My Goals</h1>
     <div class="description">
-      <img src="" alt="">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore eum deserunt voluptate velit facere hic, quo consequuntur, beatae fuga maxime ratione, unde veritatis aspernatur eveniet! Nulla esse distinctio et accusantium!
-      </p>
+      <List></List>
     </div>
   </div>
 </template>
 
 <script>
+import List from '../components/List.vue'
 
 export default {
-  name: 'About',
-  
+    name: "About",
+    components: { List }
 }
 
 </script>

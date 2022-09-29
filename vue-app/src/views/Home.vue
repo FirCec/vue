@@ -15,6 +15,15 @@ export default {
   },
   data() {
     return {
+      form: {
+
+        name: '',
+        email: '',
+        phone: '',
+        adress:'',
+        company: ''
+
+        },
       users: [
         {
         name: 'Mio',
@@ -51,6 +60,12 @@ export default {
       },
 
       ]
+    }
+  },
+
+  methods: {
+    submitted(){
+     
     }
   }
 }
