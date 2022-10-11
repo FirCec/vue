@@ -1,5 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 *{
     box-sizing: border-box;
+}
+html{
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
@@ -14,7 +19,12 @@ h1{
 }
 h2 {
     margin: 20px 10px;
-    color: #42b983;
+    color: #4d243b;
+  }
+  hr{
+    width: 80%;
+    height: 4px;
+    background-color: rgb(240, 239, 239);
   }
   .btn{
     background-color: brown;
@@ -28,11 +38,15 @@ h2 {
     border-color: transparent;
     padding: 10px;
   }
+  input:focus{
+    outline: none;
+    background-color: #dff8ed;
+  }
   ul {
     list-style-type: none;
     padding: 0;
   }
-  li {
+   li {
     display: block;
     color: #000000;
     margin: 15px;
@@ -43,6 +57,7 @@ h2 {
     border-radius: 25px;
     padding: 10px;
   }
+  
   a {
     color: #42b983;
   }

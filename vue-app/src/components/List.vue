@@ -11,8 +11,8 @@
            </form>
             <p v-if="goals.length === 0">No goals have been added yet! Please start adding</p>
             <ul v-else>
-                <li v-for="goal in goals" :key="goal" @click="removeGoal(index)">{{goal}}
-                <input type="text" @click.stop></li>
+                <li v-for="(goal,index) in goals" :key="goal" @click="removeGoal(index)">{{goal}}
+                </li>
             </ul>
         </section>
     </div>
@@ -58,4 +58,5 @@ form input{
 form button{
     width: 20%;
 }
+
 </style>

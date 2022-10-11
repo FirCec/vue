@@ -11,7 +11,7 @@
 import List from '../components/List.vue'
 
 export default {
-    name: "About",
+    name: "ListRender",
     components: { List }
 }
 
