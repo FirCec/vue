@@ -1,7 +1,7 @@
 <template>
     <section>
       <BaseCard>
-        <h2>How was you learning experience?</h2>
+        <h2>How was your learning experience?</h2>
         <form @submit.prevent="submitSurvey">
           <div class="form-control">
             <label for="name">Your Name</label>
@@ -52,7 +52,7 @@
         invalidInput: false,
       };
     },
-    emits: ['survey-submit'],
+    //emits: ['survey-submit'],
     methods: {
       submitSurvey() {
         if (this.enteredName === '' || !this.chosenRating) {
@@ -61,11 +61,16 @@
         }
         this.invalidInput = false;
   
-        this.$emit('survey-submit', {
-          userName: this.enteredName,
-          rating: this.chosenRating,
+        fetch('https://vue-http-demo-32f6e-default-rtdb.europe-west1.firebasedatabase.app/surveys.json' , {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: this.enteredName,
+            rating: this.chosenRating
+          })
         });
-  
         this.enteredName = '';
         this.chosenRating = null;
       },
