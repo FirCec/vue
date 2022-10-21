@@ -1,5 +1,6 @@
 <template>
   <button @click="navigateToUsers">To users</button>
+  <router-view></router-view>
   <ul>
     <teams-item
       v-for="team in teams"
@@ -45,5 +46,6 @@ button{
   border-radius: 5px;
   margin-top: 2px;
   margin-left: 40px;
+  margin-bottom: 30px;
 }
 </style>

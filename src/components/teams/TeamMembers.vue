@@ -27,8 +27,9 @@ export default {
       members: []
     };
   },
-  created() {
-    const selectedTeam = this.teams.find(team => team.id === this.teamId);
+  methods: {
+    loadMembers(teamId){
+      const selectedTeam = this.teams.find(team => team.id === teamId);
     const members = selectedTeam.members;
     const selectedMembers = [];
     for(const member of members){
@@ -37,9 +38,16 @@ export default {
     }
     this.members = selectedMembers;
     this.teamName = selectedTeam.name;
-    
-
+    }
   },
+  created() {
+    this.loadMembers(this.teamId);
+  },
+  watch: {
+    teamId(newVal){
+      this.loadMembers(newVal);
+    }
+  }
 };
 </script>
 

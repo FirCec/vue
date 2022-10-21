@@ -13,17 +13,20 @@ const routes = [
     },
     {
         path: '/teams',
-        component: TeamsList
+        component: TeamsList,
+        children: [
+            {
+                path: ':teamId',
+                component: TeamMembers,
+                props: true
+            },
+        ]
     },
     {
         path: '/users',
         component: UsersList
     },
-    {
-        path: '/teams/:teamId',
-        component: TeamMembers,
-        props: true
-    },
+   
     {
         path: '/:notFound(.*)',
         component: NotFound,
